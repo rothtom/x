@@ -1,0 +1,40 @@
+<table style="margin: auto;">
+    <thead>
+        <th></th>
+        <th>Written</th>
+        <th>Oral</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><p>Percentage in %</p></td>
+            <td>
+                <input type="number" step=any id="written_percentage" name="written_percentage" placeholder="Written Percentage" class="grade" onkeyup="calculate_grade(this.id);">
+            </td>
+            <td>
+                <input type="number" step=any id="oral_percentage" name="oral_percentage" placeholder="Oral Percentage" class="grade" onkeyup="calculate_grade(this.id);">
+            </td>
+        </tr>
+        <tr>
+            <td><p>Actual Grade like 1.25</p></td>
+            <td>
+                <input type="number" step=any id="written_grade" name="written_grade" placeholder="Written Grade" class="grade" onkeyup="calculate_grade(this.id);">
+            </td>
+            <td>
+                <input type="number" step=any id="oral_grade" name="oral_grade" placeholder="Oral Grade" class="grade" onkeyup="calculate_grade(this.id);">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div style="margin: auto; width: 500;">
+    <h3>This would be Grade
+        <input type="hidden" name="grade" id="calculated_grade_input">
+        <p id="calculated_grade_paragraph" style="border: 1px solid" class="dynamic_paragraph">
+            Waiting for values
+        </p>
+    </h3>
+
+    <button type="submit" id="new_grade_button">Add to Grade</button>
+</div>
+
+

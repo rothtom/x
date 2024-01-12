@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Grades
+{% endblock %}
+
+
+
+{% block body %}
+<form action="/add_to_grade" method="post">
+    <select onchange="select_subject(this.value);" class="centered_div" style="width: 250px" id="subject_selector_element" name="subject_selector">
+        <option disabled selected value="">Select Subject</option>
+        <option value="add_subject" >Add Subject</option>
+        {% for grade in grades %}
+            <option value="{{ grade.subject }}">{{ grade.subject | title }}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+    <div id="add_subject_input_field" style="margin: auto;  width: 250"></div>
+    <div id="display_calculator" ></div>
+</form>
+
+{% endblock %}

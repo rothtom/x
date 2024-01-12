@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <stocks>
+        <h2>Total Value: {{ total_value }}</h2>
+        <h2>Cash: {{ cash }}</h2>
+        <h3>Stock Value: {{ stock_value }}</h3>
+        <table width="100%">
+            <thead>
+                <th>Stock name</th>
+                <th>Shares</th>
+                <th>Value per Stock</th>
+                <th>Value total</th>
+            </thead>
+
+            <tbody>
+                {% for stock in stocks %}
+                    <tr>
+                        <td>{{ stock.name }}</td>
+                        <td>{{ stock.shares }}</td>
+                        <td>{{ stock.price }}</td>
+                        <td>{{ stock.total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </stocks>
+
+{% endblock %}

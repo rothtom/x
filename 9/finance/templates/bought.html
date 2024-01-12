@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h1>You successfully bought:</h1>
+    <h3>{{ shares }} shares of {{ stock.name }} at {{ stock.usd }} per share</h3>
+    <h3>Your total is {{ total }}</h3>
+
+{% endblock %}

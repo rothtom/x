@@ -1,0 +1,17 @@
+table, th, td {
+    border: 2px solid;
+
+}
+th{
+
+}
+
+input[type="date"], input[type="text"]{
+    width: 540px;
+}
+
+input [type='checkbox'] {
+    width: 50px;
+}
+
+

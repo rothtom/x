@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            correspondingPs = {
+                '1': 'cor1',
+                '2': 'cor2',
+                '3': 'cor3',
+                '4': 'cor4',
+                '5': 'cor5',
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+
+                buttons = document.querySelectorAll('button');
+                buttons.forEach(function(button) {
+                    if (button.id != 'submit_button_id') {
+                        button.addEventListener('click', function(event) {
+
+                            address = this.id;
+                            element = document.getElementById(address);
+                            answer = element.innerText;
+                            paddress = correspondingPs[address];
+                            correctAnswer = 'CS50';
+
+                            if (answer == correctAnswer) {
+                                element.style.backgroundColor = 'green';
+                                document.getElementById(paddress).innerText = 'Correct!';
+                            }
+                            else {
+                                element.style.backgroundColor = 'red';
+                                document.getElementById(paddress).innerText = 'Incorrect!';
+                            }
+                            event.preventDefault();
+            });}
+        });
+
+
+                submit_button = document.querySelector('#text_ans_form');
+                submit_button.addEventListener('submit', function(event) {
+                    text_answer = document.getElementById('text_ans').value.toLowerCase().trim();
+                    correctTextAnswer = 'yes';
+                    if (text_answer == correctTextAnswer) {
+                        document.getElementById('text_cor').innerText = 'Correct!';
+                        document.getElementById('text_ans').style.backgroundColor = 'green';
+                    }
+                    else if (text_answer != ""){
+                        document.getElementById('text_cor').innerText = 'Incorrect!';
+                        document.getElementById('text_ans').style.backgroundColor = 'red';
+                    }
+                    event.preventDefault();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3 text-align="center">
+                    What's this course called?
+                </h3>
+                <table class="centeredTable">
+                    <tr>
+                        <td>
+                            <button id="1">Calculous 2</button>
+                        </td>
+                        <td>
+                            <button id="2">French</button>
+                        </td>
+                        <td>
+                            <button id="3">Don't knwo, never attended a lecture</button>
+                        </td>
+                        <td>
+                            <button id="4">David's great course</button>
+                        </td>
+                        <td>
+                            <button id="5">CS50</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p id="cor1"></p>
+                        </td>
+                        <td>
+                            <p id="cor2"></p>
+                        </td>
+                        <td>
+                            <p id="cor3"></p>
+                        </td>
+                        <td>
+                            <p id="cor4"></p>
+                        </td>
+                        <td>
+                            <p id="cor5"></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- TODO: Add free response question here -->
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <h3>
+                    Is this course great?
+                </h3>
+                <form id="text_ans_form">
+                    <input id="text_ans" type="text" autocomplete="off" autofocus>
+                    <button type="submit" id="submit_button_id">
+                        Submit
+                    </button>
+                </form>
+                <p id="text_cor"></p>
+            </div>
+        </div>
+    </body>
+</html>

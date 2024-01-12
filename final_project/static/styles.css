@@ -1,0 +1,25 @@
+.centered_text {
+    text-align: "center";
+}
+
+.centered_div {
+    display: block;
+    margin: auto;
+    width: 95%;
+}
+.grade {
+    border: 2px solid;
+}
+
+.dynamic_paragraph {
+    display: table;
+}
+
+.grade_table, .grade_td, .grade_th{
+    border: 2px solid;
+    font-size: 24;
+    margin-left: 10px auto;
+    padding: 10;
+    spacing: 50;
+    align: 15 left;
+}
